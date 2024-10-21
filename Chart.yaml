@@ -1,0 +1,10 @@
+#metadata of our app
+
+apiVersion: v2
+name: nginx
+version: 0.0.1  #chat version
+description: This is the helm chart of nginx
+appVersion: "1.0.0"  #this version belongs to app
+
+
+# this is updated one c changed to C in chart.yaml going to crucial

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:  #these are deployment labels
+    app: nginx
+spec:
+  replicas: "{{ .values.deployment.replicaCount }}"
+  selector:
+    matchLabels:
+      app: nginx
+      project: roboshop
+      component: frontend
+  template:
+    metadata:
+      labels: #this are pod labels
+        app: nginx
+        project: roboshop
+        component: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: "nginx:{{ .values.deployment.imageVersion }}"
+        ports:
+        - containerPort: 80
+
