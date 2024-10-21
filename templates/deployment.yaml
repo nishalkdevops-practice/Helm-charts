@@ -23,4 +23,3 @@ spec:
         image: "nginx:{{ .values.deployment.imageVersion }}"
         ports:
         - containerPort: 80
-
